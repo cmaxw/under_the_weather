@@ -36,3 +36,6 @@
 
 /app/assets/builds/*
 !/app/assets/builds/.keep
+
+# VCR Cassettes have API keys in them. You'll have to get your own API key and to run tests
+/fixtures/vcr_cassettes/*.yml
