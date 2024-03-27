@@ -106,13 +106,10 @@ GEM
     erubi (1.12.0)
     faraday (2.9.0)
       faraday-net_http (>= 2.0, < 3.2)
-    faraday-multipart (1.0.4)
-      multipart-post (~> 2)
     faraday-net_http (3.1.0)
       net-http
     globalid (1.2.1)
       activesupport (>= 6.1)
-    hashie (5.0.0)
     i18n (1.14.4)
       concurrent-ruby (~> 1.0)
     importmap-rails (2.0.1)
@@ -141,7 +138,6 @@ GEM
     mini_mime (1.1.5)
     minitest (5.22.3)
     msgpack (1.7.2)
-    multipart-post (2.4.0)
     mutex_m (0.2.0)
     net-http (0.4.1)
       uri
@@ -167,11 +163,6 @@ GEM
       racc (~> 1.4)
     nokogiri (1.16.3-x86_64-linux)
       racc (~> 1.4)
-    open-weather-ruby-client (0.4.0)
-      activesupport
-      faraday (>= 2.0.1)
-      faraday-multipart
-      hashie
     parallel (1.24.0)
     parser (3.3.0.5)
       ast (~> 2.4.1)
@@ -339,9 +330,9 @@ DEPENDENCIES
   capybara
   debug
   dotenv
+  faraday
   importmap-rails
   jbuilder
-  open-weather-ruby-client
   pg (~> 1.1)
   propshaft
   puma (>= 5.0)
