@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://geocode.xyz/+84604?auth_code=ABCDEFGHIJKLMNOPQRSTUVWXYZ&json=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.9.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Wed, 27 Mar 2024 20:57:33 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      set-cookie:
+      - xyzh=xyzh; path=/; expires=Sat, 22-Mar-2025 20:57:33 GMT, __cflb=0H28vTE11mXeuU6nKSK66mJoUcFNb81sSNKo4D3gTcP;
+        SameSite=Lax; path=/; expires=Wed, 03-Apr-24 20:57:33 GMT; HttpOnly
+      access-control-allow-origin:
+      - "*"
+      cf-cache-status:
+      - DYNAMIC
+      report-to:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=%2FDJ4bmjeMIowXq9gfNd0FBE8XfgjGFPxSvgyuZnrh5xP6%2BNgdhH2T6PaDh1yA8Gcgv6FR%2FfCJ8x%2FuIm4JY8STgbRecLkqDHJUWwfh3WOrGLYxRvBQS39rV8W0BfZ"}],"group":"cf-nel","max_age":604800}'
+      nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      server:
+      - cloudflare
+      cf-ray:
+      - 86b24b20589a9357-SEA
+      alt-svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: '{   "standard" : {      "addresst" : "1 Bonneville Shoreline Trail",      "stnumber"
+        : "1",      "statename" : "UT",      "postal" : "84604",      "region" : "UT",      "prov"
+        : "US",      "city" : "PROVO",      "countryname" : "United States of America",      "confidence"
+        : "0.25"   },   "longt" : "-111.65065",   "alt" : {      "loc" : [         {            "staddress"
+        : "810 Reforma",            "stnumber" : {},            "statename" : {},            "postal"
+        : "84604",            "region" : "Son.",            "latt" : "30.53952",            "state"
+        : "Son.",            "longt" : "-111.12837",            "city" : "Centro",            "prov"
+        : "MX",            "countryname" : "Mexico"         },         {            "staddress"
+        : "1 Bonneville Shoreline Trail",            "stnumber" : {},            "statename"
+        : {},            "postal" : "84604",            "region" : "UT",            "latt"
+        : "40.27759",            "state" : "UT",            "longt" : "-111.65065",            "city"
+        : "PROVO",            "prov" : "US",            "countryname" : "United States
+        of America"         }      ]   },   "elevation" : {},   "latt" : "40.27759"}'
+  recorded_at: Wed, 27 Mar 2024 20:57:33 GMT
+recorded_with: VCR 6.2.0
