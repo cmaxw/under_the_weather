@@ -34,7 +34,7 @@ gem 'jbuilder'
 # Use Redis adapter to run Action Cable in production
 gem 'redis', '>= 4.0.1'
 
-# HTTP Library for fetching geocoded data
+# HTTP Library for fetching geocoded and weather data
 gem 'faraday'
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]

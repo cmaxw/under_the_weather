@@ -1,0 +1,40 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.openweathermap.org/data/2.5/weather?appid=1234567890ABCDEF1234567890ABCDEF&lat=40.40680&lon=-111.87011
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.9.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Thu, 28 Mar 2024 04:34:49 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '494'
+      connection:
+      - keep-alive
+      x-cache-key:
+      - "/data/2.5/weather?lat=40.41&lon=-111.87"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":-111.8701,"lat":40.4068},"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04n"}],"base":"stations","main":{"temp":281.26,"feels_like":279.31,"temp_min":279.48,"temp_max":282.17,"pressure":1016,"humidity":48},"visibility":10000,"wind":{"speed":3.13,"deg":274,"gust":11.18},"clouds":{"all":100},"dt":1711600489,"sys":{"type":2,"id":2037813,"country":"US","sunrise":1711545499,"sunset":1711590406},"timezone":-21600,"id":5777224,"name":"Lehi","cod":200}'
+  recorded_at: Thu, 28 Mar 2024 04:34:49 GMT
+recorded_with: VCR 6.2.0

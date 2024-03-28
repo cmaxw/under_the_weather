@@ -1,7 +1,24 @@
-<div>
-  <h1 class="mt-10 text-4xl font-bold text-gray-900 sm:text-6xl">Under the Weather?</h1>
-  <h2 class="mt-6 text-2xl text-gray-500 sm:text-3xl">Tell us where you are and we'll tell you the weather you're under</h2>
-  <%= form_with path: root_path do %>
+<div class="w-full">
+  <h1 class="mt-10 text-4xl font-bold text-gray-900 sm:text-6xl text-center">Under the Weather?</h1>
+  <div class="text-center content-center">
+    <% if @weather %>
+      <% if @weather.cached? %>
+        <div class="mt-6 w-1/2 mx-auto bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4" role="alert">
+          <p>Weather values are cached.</p>
+        </div>
+      <% end %>
+
+      <h2 class="mt-6 text-2xl text-gray-500 sm:text-3xl text-center">Current Weather</h2>
+      <h2 class="mt-6 text-xl text-gray-500 sm:text-2xl text-center"><%= [@address, [@city, @state, @country].select(&:present?).join(', '), @postal_code].select(&:present?).join(' ') %></h2>
+      <%= image_tag @weather.icon_url, class: "mx-auto" %>
+      <h3 class="mt-6 text-xl text-gray-900 sm:text-2xl text-center"><%= @weather.description %></h3>
+      <h3 class="mt-6 text-xl text-gray-900 sm:text-2xl text-center"><%= @weather.temperature_in_fahrenheit %>&deg;F / Feels like <%= @weather.feels_like_in_fahrenheit %>&deg;F</h3>
+    <% else %>
+      <h2 class="mt-6 text-2xl text-gray-500 sm:text-3xl text-center">Tell us where you are and we'll tell you the weather you're under</h2>
+    <% end %>
+  </div>
+
+  <%= form_with url: root_path, data: {turbo: false} do %>
   <div class="mt-10 grid grid-cols-2 gap-x-6 gap-y-8">
     <div class="col-span-2">
       <%= label_tag :address, "Address", class: "block font-medium leading-6 text-gray-900" %>
@@ -34,7 +51,7 @@
       </div>
     </div>
     <div class="col-span-2">
-      <%= submit_tag "Get my weather", class: "rounded bg-indigo-600 px-2.5 py-1.5 font-semibold text-white" %>
+      <%= submit_tag "Get my weather", class: "rounded bg-indigo-600 px-2.5 py-1.5 font-semibold text-white pointer" %>
     </div>
   </div>
   <% end %>

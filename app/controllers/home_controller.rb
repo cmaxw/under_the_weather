@@ -8,6 +8,13 @@ class HomeController < ApplicationController
     @postal_code = params[:postal_code]
     @country = params[:country]
 
+    @latitude, @longitude = Geocoder.geocode(address: @address,
+                                             city: @city,
+                                             state: @state,
+                                             postal_code: @postal_code,
+                                             country: @country)
+
+    @weather = Weather.new(@latitude, @longitude)
     render :index
   end
 end
